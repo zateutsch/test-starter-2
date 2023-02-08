@@ -139,7 +139,7 @@ export class AppHome extends LitElement {
             </ul>
           </sl-card>
 
-          <sl-button href="${(import.meta as any).env.BASE_URL}about" variant="primary">Navigate to About</sl-button>
+          <sl-button href="${import.meta.env.BASE_URL}about" variant="primary">Navigate to About</sl-button>
         </div>
 
         <pwa-install>Install PWA Starter</pwa-install>
