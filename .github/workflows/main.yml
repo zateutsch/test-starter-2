@@ -23,6 +23,9 @@ jobs:
       - name: Vite Build
         run: npm run build -- --base=${{ github.event.repository.name }}
         
+      - name: Redirect 404 to Index for SPA
+        run: mv index.html 404.html
+        
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
