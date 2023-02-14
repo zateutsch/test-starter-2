@@ -26,6 +26,9 @@ jobs:
       - name: Redirect 404 to Index for SPA
         run: mv dist/index.html dist/404.html
         
+      - name: Rewrite BasePath in Index
+        run: sed -i 's@<base href="/" />@<base href="${{ github.event.repository.name }}" />@g' index.html
+        
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
