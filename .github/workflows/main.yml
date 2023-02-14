@@ -23,11 +23,11 @@ jobs:
       - name: Vite Build
         run: npm run build -- --base=${{ github.event.repository.name }}
         
-      - name: Redirect 404 to Index for SPA
-        run: mv dist/index.html dist/404.html
-        
       - name: Rewrite BasePath in Index
         run: sed -i 's@<base href="/" />@<base href="${{ github.event.repository.name }}" />@g' ./dist/index.html
+        
+      - name: Redirect 404 to Index for SPA
+        run: mv dist/index.html dist/404.html
         
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
