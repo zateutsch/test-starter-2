@@ -27,7 +27,7 @@ jobs:
         run: sed -i 's@/manifest.json@${{ github.event.repository.name }}/manifest.json@g' ./dist/index.html
         
       - name: Rewrite Service Worker Path in Index
-        run: sed -i 's@/sw.js@${{ github.event.repository.name }}/sw.js@g' ./dist/index.html
+        run: sed -i 's@/sw.js@${{ github.event.repository.name }}/sw.js@g' ./dist/index.html && cat ./dist/index.html
         
       - name: Redirect 404 to Index for SPA
         run: mv dist/index.html dist/404.html
