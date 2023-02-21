@@ -1,9 +1,9 @@
 {
   "id": "/",
-  "scope": "/test-starter-2/",
+  "scope": "/",
   "name": "PWA Starter",
   "display": "standalone",
-  "start_url": "/test-starter-2/",
+  "start_url": "/",
   "short_name": "starter",
   "theme_color": "#E1477E",
   "description": "This is a PWA Starter app",
