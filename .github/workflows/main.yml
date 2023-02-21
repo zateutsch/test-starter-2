@@ -26,6 +26,9 @@ jobs:
       - name: Rewrite Service Worker Path in Index
         run: sed -i 's@/sw.js@${{ github.event.repository.name }}/sw.js@g' ./index.html && cat ./index.html
         
+      - name: Rewrite Scope in Manifest.json
+        run: sed -i 's@"scope": "/",@"scope": "${{ github.event.repository.name }}",@g' ./public/manifest.json && cat ./public/manifest.json
+        
       - name: Vite Build
         run: npm run build -- --base=${{ github.event.repository.name }}
         
